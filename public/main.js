@@ -1,68 +1,98 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Handle Choices.js for different pages
-  if (document.getElementById('funderInput')) {
-    var choices = new Choices('#funderInput', {
+  // Initialize Choices.js for various selects
+  const documentTypeSelect = document.getElementById('documentType');
+  const grantIDsSelect = document.getElementById('grantIDs');
+  const submissionDateSelect = document.getElementById('submissionDate');
+
+  if (documentTypeSelect) {
+    var documentTypeChoices = new Choices(documentTypeSelect, {
+      removeItemButton: true,
+      maxItemCount: 3,
+      searchResultLimit: 5,
+      renderChoiceLimit: 5,
+      itemSelectText: '',
+      shouldSort: false
+    });
+    documentTypeChoices.setChoices([
+      {value: 'Peer-reviewed original research', label: 'Peer-reviewed original research', selected: true},
+      {value: 'Genomic data', label: 'Genomic data'},
+      {value: 'Data supporting publications', label: 'Data supporting publications'}
+    ], 'value', 'label', false);
+  }
+
+  if (grantIDsSelect) {
+    var grantIDsChoices = new Choices(grantIDsSelect, {
       removeItemButton: true,
       maxItemCount: 2,
       searchResultLimit: 5,
       renderChoiceLimit: 5,
       itemSelectText: '',
-      shouldSort: false,
+      shouldSort: false
     });
-
-    // Set choices based on the page context
-    let choicesList = [];
-    if (window.location.pathname.includes('bmgf-nih')) {
-      choicesList = [
-        {value: 'BMGF', label: 'Bill & Melinda Gates Foundation', selected: true, disabled: true},
-        {value: 'NIH', label: 'National Institutes of Health', selected: true, disabled: true}
-      ];
-    } else if (window.location.pathname.includes('nih')) {
-      choicesList = [
-        {value: 'NIH', label: 'National Institutes of Health', selected: true, disabled: true},
-        {value: 'BMGF', label: 'Bill & Melinda Gates Foundation', disabled: false}
-      ];
-    } else {
-      choicesList = [
-        {value: 'BMGF', label: 'Bill & Melinda Gates Foundation'},
-        {value: 'NIH', label: 'National Institutes of Health'}
-      ];
-    }
-    choices.setChoices(choicesList, 'value', 'label', false);
-
-    document.getElementById('funderForm').onsubmit = function (event) {
-      event.preventDefault();
-      const values = choices.getValue(true);
-      let targetUrl = '/';
-      if (values.includes("BMGF") && values.includes("NIH")) {
-        targetUrl = 'bmgf-nih';
-      } else if (values.includes("BMGF")) {
-        targetUrl = 'bmgf';
-      } else if (values.includes("NIH")) {
-        targetUrl = 'nih';
-      }
-      window.location.href = targetUrl;
-    };
+    grantIDsChoices.setChoices([
+      {value: 'INV-123456', label: 'INV-123456 (Bill & Melinda Gates Foundation)'},
+      {value: '1-R01-NHGRI99999-20A1', label: '1-R01-NHGRI99999-20A1 (National Institutes of Health)'}
+    ], 'value', 'label', false);
   }
 
-  // Handle tab functionality on NIH and BMGF-NIH pages
-  if (document.querySelector('#tab-list')) {
-    const tabs = document.querySelectorAll('#tab-list a');
+  if (submissionDateSelect) {
+    var submissionDateChoices = new Choices(submissionDateSelect, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false
+    });
+    submissionDateChoices.setChoices([
+      {value: '12 January 2024', label: '12 January 2024', selected: true}
+    ], 'value', 'label', false);
+  }
+
+  // Handle form submission
+  const form = document.getElementById('funderForm');
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const grantIds = grantIDsChoices.getValue(true).map(choice => choice.value);
+
+      // Simple redirection logic
+      if (grantIds.includes('1-R01-NHGRI99999-20A1')) {
+        window.location.href = '/bmgf-nih';
+      } else {
+        window.location.href = '/bmgf';
+      }
+    });
+  }
+
+  // Tab functionality for pages with tabbed content
+  const tabList = document.querySelector('#tab-list');
+  if (tabList) {
+    const tabs = tabList.querySelectorAll('a');
     const panes = document.querySelectorAll('.tab-pane');
+
     tabs.forEach(tab => {
       tab.addEventListener('click', function (e) {
         e.preventDefault();
         const target = this.getAttribute('data-target');
-        tabs.forEach(t => t.classList.remove('bg-white', 'text-gray-800'));
-        panes.forEach(p => p.classList.remove('active'));
-        panes.forEach(p => p.classList.add('hidden'));
+
+        tabs.forEach(t => {
+          t.classList.remove('bg-white', 'text-gray-800');
+          t.parentElement.classList.remove('active'); // Remove active from parent li if applicable
+        });
+
+        panes.forEach(p => {
+          p.classList.remove('active');
+          p.classList.add('hidden');
+        });
+
         this.classList.add('bg-white', 'text-gray-800');
+        this.parentElement.classList.add('active'); // Add active to parent li if applicable
         document.getElementById(target).classList.add('active');
         document.getElementById(target).classList.remove('hidden');
       });
     });
-    tabs[0].classList.add('bg-white', 'text-gray-800');
-    panes[0].classList.add('active');
-    panes[0].classList.remove('hidden');
+
+    // Activate the first tab and pane by default if not already active
+    if (!tabs[0].parentElement.classList.contains('active')) {
+      tabs[0].click();
+    }
   }
 });
