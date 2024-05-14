@@ -1,0 +1,86 @@
+
+/* General Choices.js overrides and TailwindCSS integrations */
+.choices__list--dropdown .choices__item {
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity)); /* Tailwind gray-700 */
+}
+
+/* Custom styles for selected items and buttons within Choices.js dropdown */
+.choices__item--selectable.is-highlighted, 
+.choices__item--selected {
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity)); /* Tailwind gray-200 */
+  color: rgba(31, 41, 55, var(--tw-text-opacity)); /* Tailwind gray-800 */
+}
+
+.choices__item--selected {
+  --tw-bg-opacity: 1;
+  background-color: rgba(209, 213, 219, var(--tw-bg-opacity)); /* Tailwind gray-300 */
+  color: rgba(31, 41, 55, var(--tw-text-opacity)); /* Tailwind gray-800 */
+}
+
+.choices__button {
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' viewBox='0 0 24 24' stroke='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'%3E%3C/path%3E%3C/svg%3E"); /* TailwindCSS 'x' icon */
+  color: rgba(31, 41, 55, 1); /* Match the icon color to the text color */
+}
+
+/* Style adjustments for better integration */
+.choices[data-type*="select-multiple"] .choices__inner,
+.choices[data-type*="select-one"] .choices__inner {
+  border: 1px solid #e2e8f0;
+}
+
+.choices[data-type*="select-multiple"] .choices__list,
+.choices[data-type*="select-one"] .choices__list {
+  background: white;
+}
+
+.choices__list--multiple .choices__item {
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  border: 1px solid black;
+}
+
+.choices__list--multiple .choices__item.is-highlighted {
+  background-color: black;
+  border: 1px solid black;
+}
+
+.choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+  border-left: 1px solid black;
+}
+
+/* Custom style to replace the default triangle in summary */
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Hide the default arrow */
+}
+
+summary::after {
+  content: '▼'; /* Custom caret symbol */
+  font-size: 0.8em;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 0.5rem; /* Space between text and caret */
+}
+
+details[open] summary::after {
+  transform: rotate(180deg); /* Rotate caret on open */
+}
+
+th {
+  vertical-align: top; /* Keeps the text at the top of the cell */
+  padding-top: 1.2rem; /* Aligns with the summary tag */
+}
+
+.tab-pane {
+  display: none; /* Hide all panes */
+}
+
+.tab-pane.active {
+  display: block; /* Show active pane */
+}

@@ -1,0 +1,156 @@
+---
+import data from '../data/bmgf.json';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details - OAPLS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+	<style global>
+		@import "../styles/tailwind.css";
+	</style>		
+  <link rel="stylesheet" href="/global.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <nav class="bg-white border-b p-6">
+    <div class="flex justify-between">
+      <div><a href="index.html" class="text-black no-underline">OAPLS</a></div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4">
+    <div class="mt-4">
+      <a href="index.html" class="text-gray-900">&larr; Start Over</a>
+    </div>
+    <h1 class="text-5xl font-bold mt-12 mb-4">Compliance requirements for research funders</h1>
+    <p>For <a href="#" class="bg-gray-300 rounded-full py-1 px-2">Bill & Melinda Gates Foundation</a></p>
+
+    <div class="mt-8">
+      <div class="border-b border-gray-200">
+        <ul class="flex cursor-pointer" id="tab-list">
+          {data.researchArtefacts.map((artefact, index) => (
+            <li class="mr-1">
+              <a class="inline-block py-2 px-4 bg-gray-200 text-black hover:bg-gray-300 font-semibold" href="#" data-target={`tab-${index}`}>{artefact.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div id="tab-content" class="bg-white p-6">
+        {data.researchArtefacts.map((artefact, index) => (
+          <div class={`tab-pane hidden`} id={`tab-${index}`}>
+            <div class="overflow-x-auto">
+              <h2 class="sr-only">{artefact.title}</h2>
+              <h3 class="text-lg font-semibold border-b-4 pb-2">Coverage</h3>
+              <table class="w-full table-fixed">
+                <tbody class="divide-y divide-gray-200">
+                  {artefact.rows.map((row, rowIndex) => (
+                    <tr>
+                      <th class="w-1/3 p-4 text-right text-sm font-semibold">{row.label}</th>
+                      <td class="w-2/3 p-4">
+                        <details>
+                          <summary class="cursor-pointer">{row.value}</summary>
+                          {row.moreInfo && <p class="pt-2 text-gray-600 text-sm">{row.moreInfo}</p>}
+                        </details>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-4 bg-gray-100">
+      <h2 class="sr-only">About this record</h2>
+      <p class="text-gray-600 text-sm text-right">Last updated: {data.metadata.lastUpdated}</p>
+      <p class="text-gray-600 text-sm text-right">
+        Sources: 
+        {data.metadata.sources.map((source, index) => [
+          <a href={source.url} class="underline" target="_blank">{source.name}</a>,
+          index < data.metadata.sources.length - 1 ? ', ' : ''
+        ])}
+      </p>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('#tab-list a');
+      const panes = document.querySelectorAll('.tab-pane');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = this.getAttribute('data-target');
+
+          // Remove active class from all tabs and panes
+          tabs.forEach(t => t.classList.remove('bg-white', 'text-gray-800'));
+          panes.forEach(p => p.classList.remove('active'));
+
+          // Add active class to the current tab and pane
+          this.classList.add('bg-white', 'text-gray-800');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+
+      // Activate the first tab and pane by default
+      tabs[0].classList.add('bg-white', 'text-gray-800');
+      panes[0].classList.add('active');
+    });
+    </script>
+
+    <div class="mt-8">
+      <h2 class="text-lg font-semibold">Have more affiliations or funders to comply to? Providing them can improve accuracy in your results.</h2>
+      <form id="funderForm">
+        <label for="funderInput" class="block text-gray-700 text-sm font-bold mb-2">Add more organisations</label>
+        <select id="funderInput" class="block w-full p-2 border bg-white" multiple></select>
+        <button type="submit" class="bg-gray-800 text-white font-bold py-2 px-4 rounded mt-4">CHECK</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="bg-white border-t mt-12 p-6 text-center">
+    Open Source • Community Controlled • Not for Profit
+  </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var choices = new Choices('#funderInput', {
+      removeItemButton: true,
+      maxItemCount: 2,
+      searchResultLimit: 5,
+      renderChoiceLimit: 5,
+      itemSelectText: '',
+      shouldSort: false,
+    });
+
+    choices.setChoices([
+      {value: 'BMGF', label: 'Bill & Melinda Gates Foundation', selected: true, disabled: true},
+      {value: 'NIH', label: 'National Institutes of Health', disabled: false}
+    ], 'value', 'label', false);
+
+    document.getElementById('funderForm').onsubmit = function(event) {
+      event.preventDefault();
+      const selectedValues = choices.getValue(true);
+
+      let targetUrl = 'index.html';
+      const hasBMGF = selectedValues.includes("BMGF");
+      const hasNIH = selectedValues.includes("NIH");
+
+      if (hasBMGF && hasNIH) {
+        targetUrl = 'bmgf-nih.html';
+      } else if (hasBMGF) {
+        targetUrl = 'bmgf.html';
+      } else if (hasNIH) {
+        targetUrl = 'nih.html';
+      }
+      window.location.href = targetUrl;
+    };
+  });
+  </script>
+</body>
+</html>

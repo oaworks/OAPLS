@@ -1,0 +1,72 @@
+{
+  "researchArtefacts": [
+    {
+      "title": "Articles",
+      "rows": [
+        {
+          "label": "Version",
+          "value": "Accepted manuscript",
+          "moreInfo": "This means you can share the last version before the publisher adds their branding and typesetting."
+        },
+        {
+          "label": "Embargo",
+          "value": "6 months after publication",
+          "moreInfo": "Details about the embargo period and conditions."
+        },
+        {
+          "label": "Location",
+          "value": "Your institutional repository",
+          "moreInfo": ""
+        },
+        {
+          "label": "License",
+          "value": "CC-BY",
+          "moreInfo": ""
+        },
+        {
+          "label": "Copyright owner",
+          "value": "Proceedings of the National Academy of Sciences",
+          "moreInfo": ""
+        },
+        {
+          "label": "Deposit statement",
+          "value": "View statement",
+          "moreInfo": "This document is the unedited Author's version of a Submitted Work that was subsequently accepted for publication in 'Proceedings of the National Academy of Sciences'."
+        }
+      ]
+    },
+    {
+      "title": "Data",
+      "rows": [
+        {
+          "label": "Data sharing",
+          "value": "Required",
+          "moreInfo": "Details about data sharing requirements."
+        }
+      ]
+    },
+    {
+      "title": "Code",
+      "rows": [
+        {
+          "label": "Code sharing",
+          "value": "Required",
+          "moreInfo": "Details about code sharing requirements."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "1 week ago",
+    "sources": [
+      {
+        "name": "BMGF Current Open Access Policy",
+        "url": "https://openaccess.gatesfoundation.org/open-access-policy/"
+      },
+      {
+        "name": "BMGF 2025 Open Access Policy",
+        "url": "https://openaccess.gatesfoundation.org/open-access-policy/2025-open-access-policy/"
+      }
+    ]
+  }
+}
