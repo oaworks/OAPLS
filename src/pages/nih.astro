@@ -10,6 +10,7 @@ import data from '../data/nih.json';
   <title>Details - OAPLS</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script src="/main.js"></script>
 	<style>
 		@import "../styles/tailwind.css";
 	</style>		
@@ -78,32 +79,6 @@ import data from '../data/nih.json';
       </p>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const tabs = document.querySelectorAll('#tab-list a');
-      const panes = document.querySelectorAll('.tab-pane');
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = this.getAttribute('data-target');
-
-          // Remove active class from all tabs and panes
-          tabs.forEach(t => t.classList.remove('bg-white', 'text-gray-800'));
-          panes.forEach(p => p.classList.remove('active'));
-
-          // Add active class to the current tab and pane
-          this.classList.add('bg-white', 'text-gray-800');
-          document.getElementById(target).classList.add('active');
-        });
-      });
-
-      // Activate the first tab and pane by default
-      tabs[0].classList.add('bg-white', 'text-gray-800');
-      panes[0].classList.add('active');
-    });
-    </script>
-
     <div class="mt-8">
       <h2 class="text-lg font-semibold">Have more affiliations or funders to comply to? Providing them can improve accuracy in your results.</h2>
       <form id="funderForm">
@@ -117,41 +92,5 @@ import data from '../data/nih.json';
   <footer class="bg-white border-t mt-12 p-6 text-center">
     Open Source • Community Controlled • Not for Profit
   </footer>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var choices = new Choices('#funderInput', {
-      removeItemButton: true,
-      maxItemCount: 2,  // Set to 2 to allow adding another organization
-      searchResultLimit: 5,
-      renderChoiceLimit: 5,
-      itemSelectText: '',
-      shouldSort: false, // Prevents sorting to keep our custom order
-    });
-
-    // Pre-populate the select and enable only selectable choices
-    choices.setChoices([
-      {value: 'NIH', label: 'National Institutes of Health', selected: true, disabled: true},
-      {value: 'BMGF', label: 'Bill & Melinda Gates Foundation', disabled: false}
-    ], 'value', 'label', false);
-
-    document.getElementById('funderForm').onsubmit = function(event) {
-      event.preventDefault();
-      const selectedValues = choices.getValue(true); // Get an array of selected values
-
-      let targetUrl = 'index.html'; // Default to home if no match
-      const hasBMGF = selectedValues.includes("BMGF");
-      const hasNIH = selectedValues.includes("NIH");
-
-      if (hasBMGF && hasNIH) {
-        targetUrl = 'bmgf-nih.html';
-      } else if (hasBMGF) {
-        targetUrl = 'bmgf.html';
-      } else if (hasNIH) {
-        targetUrl = 'nih.html';
-      }
-      window.location.href = targetUrl;
-    };
-  });
-</script>
 </body>
 </html>
