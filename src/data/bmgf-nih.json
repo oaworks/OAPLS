@@ -4,6 +4,7 @@
       "title": "Articles",
       "sections": [
         {
+          "overline": "",
           "title": "Policy coverage",
           "info": "",
           "rows": [
@@ -45,6 +46,7 @@
           ]
         },
         {
+          "overline": "If you want to meet requirements for the",
           "title": "Published Version",
           "info": "",
           "rows": [
@@ -81,6 +83,7 @@
           ]
         },
         {
+          "overline": "If you want to meet requirements for the",
           "title": "Author Accepted Manuscript",
           "info": "",
           "rows": [

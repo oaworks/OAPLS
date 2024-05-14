@@ -87,6 +87,9 @@ import data from '../data/bmgf-nih.json';
           <div class={`tab-pane hidden`} id={`tab-${index}`}>
             {artefact.sections.map((section) => (
               <div>
+                {section.overline && (
+                  <small class="text-gray-500 text-xs uppercase font-semibold mb-2">{section.overline}</small>
+                )}
                 <h3 class="text-lg font-semibold border-b-4 pb-2">{section.title}</h3>
                 <div class="overflow-x-auto">
                   <table class="w-full table-fixed">
