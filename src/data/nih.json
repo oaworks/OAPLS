@@ -60,12 +60,12 @@
     "lastUpdated": "1 week ago",
     "sources": [
       {
-        "name": "BMGF Current Open Access Policy",
-        "url": "https://openaccess.gatesfoundation.org/open-access-policy/"
+        "name": "NIH Public Access Policy",
+        "url": "https://sharing.nih.gov/public-access-policy/public-access-policy-overview"
       },
       {
-        "name": "BMGF 2025 Open Access Policy",
-        "url": "https://openaccess.gatesfoundation.org/open-access-policy/2025-open-access-policy/"
+        "name": "NIH Policy for Data Management and Sharing",
+        "url": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html"
       }
     ]
   }

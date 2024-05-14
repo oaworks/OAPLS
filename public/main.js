@@ -55,11 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const target = this.getAttribute('data-target');
         tabs.forEach(t => t.classList.remove('bg-white', 'text-gray-800'));
         panes.forEach(p => p.classList.remove('active'));
+        panes.forEach(p => p.classList.add('hidden'));
         this.classList.add('bg-white', 'text-gray-800');
         document.getElementById(target).classList.add('active');
+        document.getElementById(target).classList.remove('hidden');
       });
     });
     tabs[0].classList.add('bg-white', 'text-gray-800');
     panes[0].classList.add('active');
+    panes[0].classList.remove('hidden');
   }
 });
