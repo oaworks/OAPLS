@@ -29,20 +29,43 @@ import data from '../data/bmgf-nih.json';
         <a href="index.html" class="text-gray-900">&larr; Start Over</a>
       </div>
       <h1 class="text-5xl font-bold mt-12 mb-4">Compliance requirements for research funders</h1>
-      <p class="pb-4">
-        For 
-        <a href="bmgf" class="bg-gray-300 rounded-full py-1 px-2">Bill & Melinda Gates Foundation</a>, 
-        <a href="nih" class="bg-gray-300 rounded-full py-1 px-2">National Institutes of Health</a>
-      </p>
-      {data.metadata.alert && (
-        <div class="p-4 border border-dotted border-gray-600 text-gray-700 text-sm">
-          <p class="pb-2 text-xs">{data.metadata.alert.date}</p>
-          <p class="pb-2">⚠ {data.metadata.alert.message}</p>
-          {data.metadata.alert.moreInfo && (
-            <p><a href={data.metadata.alert.moreInfo} class="underline" target="_blank">More information ↗</a></p>
+      <div class="flex space-x-6">
+        <div class="md:w-1/2">
+          <p class="pb-3 text-sm">
+            <span class="block mb-1 uppercase font-semibold text-xs">For</span>
+            <small class="bg-gray-300 rounded-full py-1 px-2 mr-1">{data.metadata.selection.articleType}</small>
+            {data.metadata.selection.dataType.map(type => (
+              <small class="bg-gray-300 rounded-full py-1 px-2 mr-1">{type}</small>
+            ))}
+          </p>
+          <p class="pb-3 text-sm">
+            <span class="block mb-1 uppercase font-semibold text-xs">With the grant IDs</span>
+            {data.metadata.selection.grants.map((grant, index) => [
+              <small class="bg-gray-600 text-white rounded-full py-1 px-2 mr-1">{grant.id}</small>,
+              <small class="bg-gray-300 rounded-full py-1 px-2">{grant.org}</small>,
+              index < data.metadata.selection.grants.length - 1 ? ' / ' : ''
+            ])}
+            <br>
+          </p>
+          <p class="pb-4 text-sm">
+            <span class="block mb-1 uppercase font-semibold text-xs">Submitted</span>
+            <small class="bg-gray-300 rounded-full py-1 px-2 mr-1">{data.metadata.selection.submissionDate}</small>
+            <br>
+          </p>
+        </div>
+
+        <div class="md:w-1/2">
+          {data.metadata.alert && (
+            <div class="p-4 border border-dotted border-gray-600 text-gray-700 text-sm">
+              <p class="pb-2 text-xs">{data.metadata.alert.date}</p>
+              <p class="pb-2">⚠ {data.metadata.alert.message}</p>
+              {data.metadata.alert.moreInfo && (
+                <p><a href={data.metadata.alert.moreInfo} class="underline" target="_blank">More information ↗</a></p>
+              )}
+            </div>
           )}
         </div>
-      )}
+      </div>
     </header>
 
     <div class="mt-8">

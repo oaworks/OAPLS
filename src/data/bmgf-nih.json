@@ -4,6 +4,41 @@
       "title": "Articles",
       "sections": [
         {
+          "title": "Policy coverage",
+          "info": "",
+          "rows": [
+            {
+              "label": "Article type",
+              "value": "Peer-reviewed original research",
+              "moreInfo": "Does not include review articles and other works of synthesis or opinion/analysis where grantees are invited to contribute on a specific topic, monographs, book chapters."
+            },
+            {
+              "label": "BMGF Grant award date",
+              "value": "1 January 2015"
+            },
+            {
+              "label": "BMGF Publication submission date",
+              "value": "1 January 2021"
+            },
+            {
+              "label": "NIH Publication acceptance date",
+              "value": "7 April 2008"
+            },
+            {
+              "label": "NIH Grant award date",
+              "value": "7 April 2008"
+            },
+            {
+              "label": "Proportion of research funded",
+              "value": "Any"
+            },
+            {
+              "label": "Covers employees",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
           "title": "Published Version",
           "info": "",
           "rows": [
@@ -13,13 +48,16 @@
             },
             {
               "label": "License",
-              "value": "CC-BY",
-              "moreInfo": ""
+              "value": "CC-BY"
             },
             {
               "label": "When",
               "value": "Immediately available at publication",
               "moreInfo": "No embargo period."
+            },
+            {
+              "label": "Where",
+              "value": "PubMed Central"
             },
             {
               "label": "Data availability statement",
@@ -43,8 +81,7 @@
             },
             {
               "label": "License",
-              "value": "CC-BY",
-              "moreInfo": ""
+              "value": "CC-BY"
             },
             {
               "label": "When",
@@ -53,8 +90,7 @@
             },
             {
               "label": "Where",
-              "value": "Open Access repository",
-              "moreInfo": "Compliant options include Pubmed Central, Zenodo, or an institutional repository."
+              "value": "PubMed Central"
             },
             {
               "label": "Data availability statement",
@@ -72,44 +108,7 @@
     },
     {
       "title": "Data",
-      "sections": [
-        {
-          "title": "Coverage",
-          "info": "",
-          "rows": [
-            {
-              "label": "Version",
-              "value": "Accepted manuscript",
-              "moreInfo": "This means you can share the last version before the publisher adds their branding and typesetting."
-            },
-            {
-              "label": "Embargo",
-              "value": "6 months after publication",
-              "moreInfo": "Details about the embargo period and conditions."
-            },
-            {
-              "label": "Location",
-              "value": "Your institutional repository",
-              "moreInfo": ""
-            },
-            {
-              "label": "License",
-              "value": "CC-BY",
-              "moreInfo": ""
-            },
-            {
-              "label": "Copyright owner",
-              "value": "Proceedings of the National Academy of Sciences",
-              "moreInfo": ""
-            },
-            {
-              "label": "Deposit statement",
-              "value": "View statement",
-              "moreInfo": "This document is the unedited Author's version of a Submitted Work that was subsequently accepted for publication in 'Proceedings of the National Academy of Sciences'."
-            }
-          ]
-        }
-      ]
+      "sections": []
     },
     {
       "title": "Code",
@@ -117,6 +116,24 @@
     }
   ],
   "metadata": {
+    "selection": {
+      "articleType": "Peer-reviewed original research",
+      "submissionDate": "12 January 2024",
+      "dataType": [
+        "Genomic data",
+        "Data supporting publications"
+      ],
+      "grants": [
+        {
+          "id": "INV-123456",
+          "org": "Bill & Melinda Gates Foundation"
+        },
+        {
+          "id": "1-R01-NHGRI99999-20A1",
+          "org": "National Institutes of Health"
+        }
+      ] 
+    },
     "alert": {
       "message": "A new Bill & Melinda Gates Foundation policy will apply for articles submitted from the 1st of January 2025.",
       "moreInfo": "https://openaccess.gatesfoundation.org/open-access-policy/2025-open-access-policy/",
