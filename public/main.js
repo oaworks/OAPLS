@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('funderForm').onsubmit = function (event) {
       event.preventDefault();
       const values = choices.getValue(true);
-      let targetUrl = 'index.html';
+      let targetUrl = '/';
       if (values.includes("BMGF") && values.includes("NIH")) {
-        targetUrl = 'bmgf-nih.html';
+        targetUrl = 'bmgf-nih';
       } else if (values.includes("BMGF")) {
-        targetUrl = 'bmgf.html';
+        targetUrl = 'bmgf';
       } else if (values.includes("NIH")) {
-        targetUrl = 'nih.html';
+        targetUrl = 'nih';
       }
       window.location.href = targetUrl;
     };
