@@ -52,9 +52,10 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const grantIds = grantIDsChoices.getValue(true).map(choice => choice.value);
+      const documentTypes = documentTypeChoices.getValue(true).map(choice => choice.value);
 
       // Simple redirection logic
-      if (grantIds.length === 2) {
+      if (grantIds.length === 2 && documentTypes.length === 3) {
         window.location.href = '/bmgf-nih';
       } else {
         window.location.href = '/bmgf';
