@@ -24,11 +24,26 @@ import data from '../data/bmgf-nih.json';
   </nav>
 
   <div class="container mx-auto px-4">
-    <div class="mt-4">
-      <a href="index.html" class="text-gray-900">&larr; Start Over</a>
-    </div>
-    <h1 class="text-5xl font-bold mt-12 mb-4">Compliance requirements for research funders</h1>
-    <p>For <a href="bmgf" class="bg-gray-300 rounded-full py-1 px-2">Bill & Melinda Gates Foundation</a>, <a href="nih" class="bg-gray-300 rounded-full py-1 px-2">National Institutes of Health</a></p>
+    <header>
+      <div class="mt-4">
+        <a href="index.html" class="text-gray-900">&larr; Start Over</a>
+      </div>
+      <h1 class="text-5xl font-bold mt-12 mb-4">Compliance requirements for research funders</h1>
+      <p class="pb-4">
+        For 
+        <a href="bmgf" class="bg-gray-300 rounded-full py-1 px-2">Bill & Melinda Gates Foundation</a>, 
+        <a href="nih" class="bg-gray-300 rounded-full py-1 px-2">National Institutes of Health</a>
+      </p>
+      {data.metadata.alert && (
+        <div class="p-4 border border-dotted border-gray-600 text-gray-700 text-sm">
+          <p class="pb-2 text-xs">{data.metadata.alert.date}</p>
+          <p class="pb-2">⚠ {data.metadata.alert.message}</p>
+          {data.metadata.alert.moreInfo && (
+            <p><a href={data.metadata.alert.moreInfo} class="underline" target="_blank">More information ↗</a></p>
+          )}
+        </div>
+      )}
+    </header>
 
     <div class="mt-8">
       <div class="border-b border-gray-200">
@@ -53,10 +68,14 @@ import data from '../data/bmgf-nih.json';
                         <tr>
                           <th class="w-1/3 p-4 text-right text-sm font-semibold">{row.label}</th>
                           <td class="w-2/3 p-4">
-                            <details>
-                              <summary class="cursor-pointer">{row.value}</summary>
-                              {row.moreInfo && <p class="pt-2 text-gray-600 text-sm">{row.moreInfo}</p>}
-                            </details>
+                            {row.moreInfo ? (
+                              <details>
+                                <summary class="cursor-pointer">{row.value}</summary>
+                                <p class="pt-2 text-gray-600 text-sm">{row.moreInfo}</p>
+                              </details>
+                            ) : (
+                              <span>{row.value}</span>
+                            )}
                           </td>
                         </tr>
                       ))}

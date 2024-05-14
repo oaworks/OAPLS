@@ -161,6 +161,12 @@
     }
   ],
   "metadata": {
+    "alert": {
+      "type": "info",
+      "message": "A new Bill & Melinda Gates Foundation Policy will apply for articles submitted from the 1st of January 2025.",
+      "moreInfo": "https://openaccess.gatesfoundation.org/open-access-policy/2025-open-access-policy/",
+      "date": "1st May 2024"
+    },
     "lastUpdated": "1 week ago",
     "sources": [
       {
