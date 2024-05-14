@@ -14,27 +14,33 @@
             },
             {
               "label": "BMGF Grant award date",
-              "value": "1 January 2015"
+              "value": "1 January 2015",
+              "moreInfo": ""
             },
             {
               "label": "BMGF Publication submission date",
-              "value": "1 January 2021"
+              "value": "1 January 2021",
+              "moreInfo": ""
             },
             {
               "label": "NIH Publication acceptance date",
-              "value": "7 April 2008"
+              "value": "7 April 2008",
+              "moreInfo": ""
             },
             {
               "label": "NIH Grant award date",
-              "value": "7 April 2008"
+              "value": "7 April 2008",
+              "moreInfo": ""
             },
             {
               "label": "Proportion of research funded",
-              "value": "Any"
+              "value": "Any",
+              "moreInfo": ""
             },
             {
               "label": "Covers employees",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             }
           ]
         },
@@ -44,11 +50,13 @@
           "rows": [
             {
               "label": "Freely available",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             },
             {
               "label": "License",
-              "value": "CC-BY"
+              "value": "CC-BY",
+              "moreInfo": ""
             },
             {
               "label": "When",
@@ -57,7 +65,8 @@
             },
             {
               "label": "Where",
-              "value": "PubMed Central"
+              "value": "PubMed Central",
+              "moreInfo": ""
             },
             {
               "label": "Data availability statement",
@@ -77,11 +86,13 @@
           "rows": [
             {
               "label": "Freely available",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             },
             {
               "label": "License",
-              "value": "CC-BY"
+              "value": "CC-BY",
+              "moreInfo": ""
             },
             {
               "label": "When",
@@ -90,7 +101,8 @@
             },
             {
               "label": "Where",
-              "value": "PubMed Central"
+              "value": "PubMed Central",
+              "moreInfo": ""
             },
             {
               "label": "Data availability statement",

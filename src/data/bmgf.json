@@ -14,19 +14,23 @@
             },
             {
               "label": "BMGF Grant award date",
-              "value": "1 January 2015"
+              "value": "1 January 2015",
+              "moreInfo": ""
             },
             {
               "label": "BMGF Publication submission date",
-              "value": "1 January 2021"
+              "value": "1 January 2021",
+              "moreInfo": ""
             },
             {
               "label": "Proportion of research funded",
-              "value": "Any"
+              "value": "Any",
+              "moreInfo": ""
             },
             {
               "label": "Covers employees",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             }
           ]
         },
@@ -36,11 +40,13 @@
           "rows": [
             {
               "label": "Freely available",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             },
             {
               "label": "License",
-              "value": "CC-BY"
+              "value": "CC-BY",
+              "moreInfo": ""
             },
             {
               "label": "When",
@@ -65,11 +71,13 @@
           "rows": [
             {
               "label": "Freely available",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             },
             {
               "label": "License",
-              "value": "CC-BY"
+              "value": "CC-BY",
+              "moreInfo": ""
             },
             {
               "label": "When",
@@ -78,7 +86,8 @@
             },
             {
               "label": "Where",
-              "value": "Open Access repositories including PubMed Central, Zenodo, or institutional repositories."
+              "value": "Open Access repositories including PubMed Central, Zenodo, or institutional repositories.",
+              "moreInfo": ""
             },
             {
               "label": "Data availability statement",
@@ -103,23 +112,28 @@
           "rows": [
             {
               "label": "Data type",
-              "value": "Data supporting publications"
+              "value": "Data supporting publications",
+              "moreInfo": ""
             },
             {
               "label": "BMGF Publication submission date",
-              "value": "1 January 2021"
+              "value": "1 January 2021",
+              "moreInfo": ""
             },
             {
               "label": "BMGF Grant award date",
-              "value": "1 January 2015"
+              "value": "1 January 2015",
+              "moreInfo": ""
             },
             {
               "label": "Proportion of research funded",
-              "value": "Any"
+              "value": "Any",
+              "moreInfo": ""
             },
             {
               "label": "Covers employees",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             }
           ]
         },
@@ -128,7 +142,8 @@
           "rows": [
             {
               "label": "Freely available",
-              "value": "Yes"
+              "value": "Yes",
+              "moreInfo": ""
             },
             {
               "label": "When",
