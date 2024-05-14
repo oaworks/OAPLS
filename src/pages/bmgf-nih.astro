@@ -72,8 +72,12 @@ import data from '../data/bmgf-nih.json';
       <div class="border-b border-gray-200">
         <ul class="flex cursor-pointer" id="tab-list">
           {data.researchArtefacts.map((artefact, index) => (
-            <li class="mr-1">
-              <a class="inline-block py-2 px-4 bg-gray-200 text-black hover:bg-gray-300 font-semibold" href="#" data-target={`tab-${index}`}>{artefact.title}</a>
+            <li class={`mr-1 ${artefact.sections.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}>
+              <a class={`inline-block py-2 px-4 bg-gray-200 text-black hover:bg-gray-300 font-semibold ${artefact.sections.length === 0 ? 'pointer-events-none' : ''}`}
+                 href="#"
+                 data-target={`tab-${index}`}>
+                {artefact.title}
+              </a>
             </li>
           ))}
         </ul>
