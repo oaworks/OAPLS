@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const grantIds = grantIDsChoices.getValue(true).map(choice => choice.value);
 
       // Simple redirection logic
-      if (grantIds.includes('1-R01-NHGRI99999-20A1')) {
+      if (grantIds.length === 2) {
         window.location.href = '/bmgf-nih';
       } else {
         window.location.href = '/bmgf';
