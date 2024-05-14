@@ -4,74 +4,91 @@
       "title": "Articles",
       "sections": [
         {
-          "title": "Coverage",
+          "title": "Policy coverage",
           "info": "",
           "rows": [
             {
-              "label": "Version",
-              "value": "Accepted manuscript",
-              "moreInfo": "This means you can share the last version before the publisher adds their branding and typesetting."
+              "label": "Article type",
+              "value": "Peer-reviewed original research",
+              "moreInfo": "Does not include review articles and other works of synthesis or opinion/analysis where grantees are invited to contribute on a specific topic, monographs, book chapters."
             },
             {
-              "label": "Embargo",
-              "value": "6 months after publication",
-              "moreInfo": "Details about the embargo period and conditions."
+              "label": "BMGF Grant award date",
+              "value": "1 January 2015"
             },
             {
-              "label": "Location",
-              "value": "Your institutional repository",
-              "moreInfo": ""
+              "label": "BMGF Publication submission date",
+              "value": "1 January 2021"
             },
             {
-              "label": "License",
-              "value": "CC-BY",
-              "moreInfo": ""
+              "label": "Proportion of research funded",
+              "value": "Any"
             },
             {
-              "label": "Copyright owner",
-              "value": "Proceedings of the National Academy of Sciences",
-              "moreInfo": ""
-            },
-            {
-              "label": "Deposit statement",
-              "value": "View statement",
-              "moreInfo": "This document is the unedited Author's version of a Submitted Work that was subsequently accepted for publication in 'Proceedings of the National Academy of Sciences'."
+              "label": "Covers employees",
+              "value": "Yes"
             }
           ]
         },
         {
-          "title": "Requirements",
+          "title": "Published Version",
           "info": "",
           "rows": [
             {
-              "label": "Version",
-              "value": "Accepted manuscript",
-              "moreInfo": "This means you can share the last version before the publisher adds their branding and typesetting."
-            },
-            {
-              "label": "Embargo",
-              "value": "6 months after publication",
-              "moreInfo": "Details about the embargo period and conditions."
-            },
-            {
-              "label": "Location",
-              "value": "Your institutional repository",
-              "moreInfo": ""
+              "label": "Freely available",
+              "value": "Yes"
             },
             {
               "label": "License",
-              "value": "CC-BY",
-              "moreInfo": ""
+              "value": "CC-BY"
             },
             {
-              "label": "Copyright owner",
-              "value": "Proceedings of the National Academy of Sciences",
-              "moreInfo": ""
+              "label": "When",
+              "value": "Immediately available at publication",
+              "moreInfo": "No embargo period."
             },
             {
-              "label": "Deposit statement",
-              "value": "View statement",
-              "moreInfo": "This document is the unedited Author's version of a Submitted Work that was subsequently accepted for publication in 'Proceedings of the National Academy of Sciences'."
+              "label": "Data availability statement",
+              "value": "Yes",
+              "moreInfo": "Describes where any primary data, associated metadata, original software, and any additional relevant materials necessary to understand, assess, and replicate the reported study findings in totality can be found."
+            },
+            {
+              "label": "Funding acknowledgment statement",
+              "value": "Yes",
+              "moreInfo": "“This work was supported, in whole or in part, by the Bill & Melinda Gates Foundation [grant number]. Under the grant conditions of the Foundation, a Creative Commons Attribution 4.0 Generic License has already been assigned to the Author Accepted Manuscript version that might arise from this submission.”"
+            }
+          ]
+        },
+        {
+          "title": "Author Accepted Manuscript",
+          "info": "",
+          "rows": [
+            {
+              "label": "Freely available",
+              "value": "Yes"
+            },
+            {
+              "label": "License",
+              "value": "CC-BY"
+            },
+            {
+              "label": "When",
+              "value": "Immediately available at publication",
+              "moreInfo": "No embargo period."
+            },
+            {
+              "label": "Where",
+              "value": "Open Access repositories including PubMed Central, Zenodo, or institutional repositories."
+            },
+            {
+              "label": "Data availability statement",
+              "value": "Yes",
+              "moreInfo": "Describes where any primary data, associated metadata, original software, and any additional relevant materials necessary to understand, assess, and replicate the reported study findings in totality can be found."
+            },
+            {
+              "label": "Funding acknowledgment statement",
+              "value": "Yes",
+              "moreInfo": "“This work was supported, in whole or in part, by the Bill & Melinda Gates Foundation [grant number]. Under the grant conditions of the Foundation, a Creative Commons Attribution 4.0 Generic License has already been assigned to the Author Accepted Manuscript version that might arise from this submission.”"
             }
           ]
         }
@@ -81,38 +98,42 @@
       "title": "Data",
       "sections": [
         {
-          "title": "Coverage",
+          "title": "Policy coverage",
           "info": "",
           "rows": [
             {
-              "label": "Version",
-              "value": "Accepted manuscript",
-              "moreInfo": "This means you can share the last version before the publisher adds their branding and typesetting."
+              "label": "Data type",
+              "value": "Data supporting publications"
             },
             {
-              "label": "Embargo",
-              "value": "6 months after publication",
-              "moreInfo": "Details about the embargo period and conditions."
+              "label": "BMGF Publication submission date",
+              "value": "1 January 2021"
             },
             {
-              "label": "Location",
-              "value": "Your institutional repository",
-              "moreInfo": ""
+              "label": "BMGF Grant award date",
+              "value": "1 January 2015"
             },
             {
-              "label": "License",
-              "value": "CC-BY",
-              "moreInfo": ""
+              "label": "Proportion of research funded",
+              "value": "Any"
             },
             {
-              "label": "Copyright owner",
-              "value": "Proceedings of the National Academy of Sciences",
-              "moreInfo": ""
+              "label": "Covers employees",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "title": "Requirements",
+          "rows": [
+            {
+              "label": "Freely available",
+              "value": "Yes"
             },
             {
-              "label": "Deposit statement",
-              "value": "View statement",
-              "moreInfo": "This document is the unedited Author's version of a Submitted Work that was subsequently accepted for publication in 'Proceedings of the National Academy of Sciences'."
+              "label": "When",
+              "value": "Immediately available at publication",
+              "moreInfo": "No embargo period."
             }
           ]
         }
@@ -120,50 +141,22 @@
     },
     {
       "title": "Code",
-      "sections": [
-        {
-          "title": "Coverage",
-          "info": "",
-          "rows": [
-            {
-              "label": "Version",
-              "value": "Accepted manuscript",
-              "moreInfo": "This means you can share the last version before the publisher adds their branding and typesetting."
-            },
-            {
-              "label": "Embargo",
-              "value": "6 months after publication",
-              "moreInfo": "Details about the embargo period and conditions."
-            },
-            {
-              "label": "Location",
-              "value": "Your institutional repository",
-              "moreInfo": ""
-            },
-            {
-              "label": "License",
-              "value": "CC-BY",
-              "moreInfo": ""
-            },
-            {
-              "label": "Copyright owner",
-              "value": "Proceedings of the National Academy of Sciences",
-              "moreInfo": ""
-            },
-            {
-              "label": "Deposit statement",
-              "value": "View statement",
-              "moreInfo": "This document is the unedited Author's version of a Submitted Work that was subsequently accepted for publication in 'Proceedings of the National Academy of Sciences'."
-            }
-          ]
-        }
-      ]
+      "sections": []
     }
   ],
   "metadata": {
+    "selection": {
+      "articleType": "Peer-reviewed original research",
+      "submissionDate": "12 January 2024",
+      "grants": [
+        {
+          "id": "INV-123456",
+          "org": "Bill & Melinda Gates Foundation"
+        }
+      ] 
+    },
     "alert": {
-      "type": "info",
-      "message": "A new Bill & Melinda Gates Foundation Policy will apply for articles submitted from the 1st of January 2025.",
+      "message": "A new Bill & Melinda Gates Foundation policy will apply for articles submitted from the 1st of January 2025.",
       "moreInfo": "https://openaccess.gatesfoundation.org/open-access-policy/2025-open-access-policy/",
       "date": "1st May 2024"
     },

@@ -11,31 +11,70 @@ import data from '../data/bmgf.json';
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   <script src="/main.js" is:inline></script>
-  <style>
-    @import "../styles/tailwind.css";
-  </style>   
+	<style>
+		@import "../styles/tailwind.css";
+	</style>		
   <link rel="stylesheet" href="/global.css">
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
   <nav class="bg-white border-b p-6">
     <div class="flex justify-between">
-      <a href="index.html" class="text-black no-underline">OAPLS</a>
+      <div><a href="index.html" class="text-black no-underline">OAPLS</a></div>
     </div>
   </nav>
 
   <div class="container mx-auto px-4">
-    <div class="mt-4">
-      <a href="index.html" class="text-gray-900">&larr; Start Over</a>
-    </div>
-    <h1 class="text-5xl font-bold mt-12 mb-4">Compliance requirements for research funders</h1>
-    <p>For <a href="#" class="bg-gray-300 rounded-full py-1 px-2">Bill & Melinda Gates Foundation</a></p>
+    <header>
+      <div class="mt-4">
+        <a href="index.html" class="text-gray-900">&larr; Start Over</a>
+      </div>
+      <h1 class="text-5xl font-bold mt-12 mb-4">Compliance requirements for research funders</h1>
+      <div class="flex space-x-6">
+        <div class="md:w-1/2">
+          <p class="pb-3 text-sm">
+            <span class="block mb-1 uppercase font-semibold text-xs">For</span>
+            <small class="bg-gray-300 rounded-full py-1 px-2 mr-1">{data.metadata.selection.articleType}</small>
+          </p>
+          <p class="pb-3 text-sm">
+            <span class="block mb-1 uppercase font-semibold text-xs">With the grant IDs</span>
+            {data.metadata.selection.grants.map((grant, index) => [
+              <small class="bg-gray-600 text-white rounded-full py-1 px-2 mr-1">{grant.id}</small>,
+              <small class="bg-gray-300 rounded-full py-1 px-2">{grant.org}</small>,
+              index < data.metadata.selection.grants.length - 1 ? ' / ' : ''
+            ])}
+            <br>
+          </p>
+          <p class="pb-4 text-sm">
+            <span class="block mb-1 uppercase font-semibold text-xs">Submitted</span>
+            <small class="bg-gray-300 rounded-full py-1 px-2 mr-1">{data.metadata.selection.submissionDate}</small>
+            <br>
+          </p>
+        </div>
+
+        <div class="md:w-1/2">
+          {data.metadata.alert && (
+            <div class="p-4 border border-dotted border-gray-600 text-gray-700 text-sm">
+              <p class="pb-2 text-xs">{data.metadata.alert.date}</p>
+              <p class="pb-2">⚠ {data.metadata.alert.message}</p>
+              {data.metadata.alert.moreInfo && (
+                <p><a href={data.metadata.alert.moreInfo} class="underline" target="_blank">More information ↗</a></p>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
 
     <div class="mt-8">
       <div class="border-b border-gray-200">
         <ul class="flex cursor-pointer" id="tab-list">
           {data.researchArtefacts.map((artefact, index) => (
-            <li class="mr-1">
-              <a class="inline-block py-2 px-4 bg-gray-200 text-black hover:bg-gray-300 font-semibold" href="#" data-target={`tab-${index}`}>{artefact.title}</a>
+            <li class={`mr-1 ${artefact.sections.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}>
+              <a class={`inline-block py-2 px-4 bg-gray-200 text-black hover:bg-gray-300 font-semibold ${artefact.sections.length === 0 ? 'pointer-events-none' : ''}`}
+                 href="#"
+                 data-target={`tab-${index}`}>
+                {artefact.title}
+              </a>
             </li>
           ))}
         </ul>
@@ -53,10 +92,14 @@ import data from '../data/bmgf.json';
                         <tr>
                           <th class="w-1/3 p-4 text-right text-sm font-semibold">{row.label}</th>
                           <td class="w-2/3 p-4">
-                            <details>
-                              <summary class="cursor-pointer">{row.value}</summary>
-                              {row.moreInfo && <p class="pt-2 text-gray-600 text-sm">{row.moreInfo}</p>}
-                            </details>
+                            {row.moreInfo ? (
+                              <details>
+                                <summary class="cursor-pointer">{row.value}</summary>
+                                <p class="pt-2 text-gray-600 text-sm">{row.moreInfo}</p>
+                              </details>
+                            ) : (
+                              <span>{row.value}</span>
+                            )}
                           </td>
                         </tr>
                       ))}
